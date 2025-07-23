@@ -12,7 +12,7 @@ provider "azurerm" {
   subscription_id = "f5c092a3-a10b-4952-9791-a66c5de6792b"
   # Configuration options
 }
-resource "azurerm_resource_group" "diliprg" {
-  name     = "dilip-rg"
+resource "azurerm_resource_group" "diliprg3" {
+  name     = "dilip-rg4"
   location = "West Europe"
 }
