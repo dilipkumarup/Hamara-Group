@@ -1,14 +1,18 @@
-resource "azurerm_resource_group" "gittest" {
-  name     = "gittest"
-  location = "West Europe"
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "4.29.0"
+    }
+  }
 }
 
-
-resource "azurerm_storage_account" "stg1" {
-  name                     = "stg1storageaccount"
-  resource_group_name      = azurerm_resource_group.gittest.name
-  location                 = azurerm_resource_group.gittest.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  public_network_access_enabled = false
-  
+provider "azurerm" {
+  features {}
+  subscription_id = "f5c092a3-a10b-4952-9791-a66c5de6792b"
+  # Configuration options
+}
+resource "azurerm_resource_group" "diliprg" {
+  name     = "dilip-rg"
+  location = "West Europe"
+}
